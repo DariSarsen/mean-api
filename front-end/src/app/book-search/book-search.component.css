@@ -1,0 +1,4 @@
+.book-cover {
+  height: 200px; /* Задай здесь желаемую высоту карточки */
+  object-fit: cover;
+}

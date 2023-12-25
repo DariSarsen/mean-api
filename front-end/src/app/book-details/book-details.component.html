@@ -1,0 +1,13 @@
+<div *ngIf="bookDetails" class="container mt-4 col-md-8 mx-auto">
+  <div class="card shadow border-0 p-4">
+    <div class="card-body">
+      <h2 class="card-title h1 text-center border-bottom pb-3">{{ bookDetails.title }}</h2>
+      <p class="card-text fs-5"><b>Author: </b> {{ bookDetails.author }}</p>
+      <p class="card-text fs-5"><b>Description: </b> {{ bookDetails.description }}</p>
+      <!-- Кнопка обновления книги -->
+      <div class="text-center mt-4">
+        <a class="btn btn-primary w-50" [routerLink]="['/edit', bookId]">Update</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="col-md-12 border shadow rounded p-4">
+  <form (ngSubmit)="onFileUpload()" enctype="multipart/form-data">
+    <input type="file" (change)="onFileSelected($event)" class="my-3 form-control">
+    <button type="submit" class="btn btn-outline-dark text-end">Загрузить файл</button>
+  </form>
+</div>
+
+<section class="border rounded shadow p-3 my-5 d-flex ">
+  <div class="col-md-6">
+    <h2>Категориальные значения:</h2>
+    <ul id="categoricalValues" class="listContainer"></ul>
+  </div>
+  <div class="col-md-6">
+    <h2>Числовые значения:</h2>
+    <ul id="numericValues" class="listContainer"></ul>
+  </div>
+</section>
+
+<h2>Столбчатая диаграмма</h2>
+<canvas id="chartBarCanvas" class="border rounded shadow p-3 my-4"></canvas>
+<h2>Круговая диаграмма</h2>
+<div class="col-md-12">
+  <canvas id="chartPieCanvas" class="border rounded shadow w-75 mx-auto"></canvas>
+</div>
+

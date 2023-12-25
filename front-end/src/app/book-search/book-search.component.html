@@ -1,0 +1,54 @@
+<div class="container mb-5 shadow">
+  <div class="row border rounded p-4">
+    <div class="text-uppercase lead fs-2 text-center">find books from google books api</div>
+    <div class="col-md-12 d-flex mt-2">
+      <input type="text" class="form-control" [formControl]="searchControl" placeholder="Введите запрос">
+    </div>
+
+
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 mb-4" *ngFor="let book of books">
+          <div class="card h-100" (click)="viewBookDetails(book.id)">
+            <img [src]="book.volumeInfo.imageLinks?.thumbnail" class="card-img-top book-cover" alt="Book Cover">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.volumeInfo.title }}</h5>
+              <p class="card-text">Автор: {{ book.volumeInfo.authors }}</p>
+              <p class="card-text">Страниц: {{ book.volumeInfo.pageCount }}</p>
+              <p class="card-text">Год выпуска: {{ book.volumeInfo.publishedDate }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container mb-5 shadow">
+  <div class="row border rounded p-4">
+    <div class="text-uppercase fs-2 lead text-center">Bestsellers from google books api</div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-3 mb-4" *ngFor="let bestseller of bestsellers">
+          <div class="card h-100" (click)="viewBookDetails(bestseller.id)">
+            <img [src]="bestseller.volumeInfo.imageLinks?.thumbnail" class="card-img-top book-cover" alt="Book Cover">
+            <div class="card-body">
+              <h5 class="card-title">{{ bestseller.volumeInfo.title }}</h5>
+              <p class="card-text">Автор: {{ bestseller.volumeInfo.authors }}</p>
+              <p class="card-text" *ngIf="bestseller.volumeInfo.pageCount">{{ bestseller.volumeInfo.pageCount }} страниц</p>
+              <p class="card-text">Дата выпуска: {{ bestseller.volumeInfo.publishedDate }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

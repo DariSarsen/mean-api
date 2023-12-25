@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img [src]="bookDetails.volumeInfo.imageLinks?.thumbnail" class="img-fluid rounded-start w-100 mt-3 p-3" alt="Book Cover">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-title text-center">{{ bookDetails.volumeInfo.title }}</h1>
+              <p class="card-text"><b> Автор:</b> {{ bookDetails.volumeInfo.authors }}</p>
+              <p class="card-text"><b>Год выпуска:</b> {{ bookDetails.volumeInfo.publishedDate }}</p>
+              <p class="card-text"><b>Страниц:</b> {{ bookDetails.volumeInfo.pageCount }}</p>
+              <p class="card-text"><b>Категория:</b> {{ bookDetails.volumeInfo.categories }}</p>
+              <hr class="my-3">
+              <p class="card-text h4 text-center">Описание книги:</p>
+              <hr>
+              <p class="card-text" [innerHTML]="bookDetails.volumeInfo.description"></p>
+              <a [href]="bookDetails.volumeInfo.previewLink" target="_blank" class="mt-3 btn btn-outline-dark btn-sm w-100">Перейти в Google Books</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
